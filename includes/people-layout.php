@@ -3,7 +3,7 @@
 function people_display() {
     $args = array(
         'posts_per_page' => -1, 
-        'post_type' => 'post',   
+        'post_type' => 'people',   
         'post_status' => 'publish'
     );
 
