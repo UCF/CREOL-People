@@ -3,7 +3,7 @@
 function people_display() {
 	$posts = get_posts(array(
 		'posts_per_page'    => -1,
-		'post_type'         => 'People'
+		'post_type'         => 'people'
 	));
 
 	if( $posts ): ?>
