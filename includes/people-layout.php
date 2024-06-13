@@ -37,7 +37,7 @@ function people_display() {
                 text-decoration: none;
                 font-size: 1rem;
                 display: block;
-                margin-bottom: 0;
+                margin-bottom: -0.2rem;
             }
             .custom-card .card-title a:hover {
                 color: #555;
