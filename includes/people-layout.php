@@ -27,18 +27,9 @@ function people_display() {
             echo '<style>
                 .section-title {
                     margin-top: 2em;
-                    position: relative;
-                    padding-bottom: 10px;
+                    padding-bottom: 5px;
+                    border-bottom: 3px solid #ffcc00;
                 }
-                .section-title::after {
-                    display: block;
-                    width: 100%;
-                    height: 3px;
-                    background-color: #ffcc00;
-                    position: absolute;
-                    left: 0;
-                    bottom: 0;
-                }   
                 .custom-card {
                     border: none;
                     border-radius: 10px;
