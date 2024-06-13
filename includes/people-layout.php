@@ -10,6 +10,8 @@ function people_display() {
 
     $posts = get_posts($args);
 
+    echo '<pre>'; var_dump($posts); echo '</pre>';
+
     if (!empty($posts)) {
         // Include custom styles
         echo '<style>
