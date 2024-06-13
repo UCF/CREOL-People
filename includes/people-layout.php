@@ -1,6 +1,6 @@
 <?php
 
-function all_posts_display() {
+function people_display() {
     $args = array(
         'posts_per_page' => -1, // Retrieve all posts
         'post_type' => 'post',  // Only posts, not pages
