@@ -1,41 +1,24 @@
 <?php
 
-function people_display() {
-	$array = array();
+function all_posts_display() {
+    $args = array(
+        'posts_per_page' => -1, // Retrieve all posts
+        'post_type' => 'post',  // Only posts, not pages
+        'post_status' => 'publish' // Only published posts
+    );
 
-	$args         = array(
-		'post_type'      => 'resources',
-		'post_status'    => array( 'publish' ),
-		'nopaging'       => true,
-		'posts_per_page' => '-1',
-		'order'          => 'ASC',
-		'orderby'        => 'ID',
+    $query = new WP_Query($args);
 
-	);
-	$queryResults = new WP_Query( $args );
+    if ($query->have_posts()) {
+        echo '<ul>';
+        while ($query->have_posts()) {
+            $query->the_post();
+            echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
+        }
+        echo '</ul>';
+    } else {
+        echo 'No posts found.';
+    }
 
-	if ( $queryResults->have_posts() ) {
-		$counter = 0;
-		while ( $queryResults->have_posts() ) {
-			$queryResults->the_post();
-			$array[ $counter ][ 'ID' ]           = get_the_ID();
-			$array[ $counter ][ 'name' ]         = get_the_title();
-			$array[ $counter ][ 'thumbnailURL' ] = get_the_post_thumbnail_url();
-			$array[ $counter ][ 'place' ]        = get_field( 'resource_location' );
-			//etc etc etc
-
-			$counter++;
-		}
-
-		$jasoned = json_encode( $array, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES );
-		echo $jasoned;
-		?>
-		<script>
-			console.log(<?= json_encode($foo); ?>);
-		</script>
-		<?php
-	} else {
-		//nothing found
-	}
-	wp_reset_postdata();
+    wp_reset_postdata(); // Reset the global post object
 }
