@@ -4,7 +4,8 @@ function people_display() {
     $args = array(
         'posts_per_page' => -1, 
         'post_type' => 'person',   
-        'post_status' => 'publish'
+        'post_status' => 'publish',
+		'category_name'  => 'core-faculty'
     );
 
     $posts = get_posts($args);
