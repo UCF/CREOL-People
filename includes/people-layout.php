@@ -21,13 +21,11 @@ function people_display() {
 
         $posts = get_posts($args);
 
-        echo "<h2 class='section-title auto-section mb-5 pb-5' data-section-link-title='$title'>$title</h2>";
+        echo "<h2 class='section-title auto-section mb-5 pb-2' data-section-link-title='$title'>$title</h2>";
 
         if (!empty($posts)) {
             echo '<style>
                 .section-title {
-                    margin-top: 2em;
-                    padding-bottom: 5px;
                     border-bottom: 3px solid #ffcc00;
                 }
                 .custom-card {
