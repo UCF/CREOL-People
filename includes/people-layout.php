@@ -10,6 +10,12 @@ function people_display() {
 
     $posts = get_posts($args);
 
+	ob_start();
+    var_dump($posts);
+    $result = ob_get_clean();
+
+    echo "<script>console.log(" . json_encode($result) . ");</script>";
+
     if (!empty($posts)) {
         echo '<ul>';
         foreach ($posts as $post) {
