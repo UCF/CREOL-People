@@ -6,34 +6,37 @@ function people_display() {
         'post_type'      => 'person',
         'post_status'    => 'publish',
         'category_name'  => 'core-faculty',
-        'meta_key'       => 'person_orderby_name', 
+        'meta_key'       => 'person_orderby_name',
         'orderby'        => 'meta_value',
-        'order'          => 'ASC' 
+        'order'          => 'ASC'
     );
 
     $posts = get_posts($args);
 
     if (!empty($posts)) {
-        // Include custom styles
         echo '<style>
             .custom-card {
                 border: none;
                 border-radius: 10px;
+                text-align: center;
             }
             .custom-card img {
                 width: 200px;
                 height: 250px;
                 object-fit: cover;
                 border-radius: 10px;
+                display: block;
+                margin: 0 auto;
             }
             .custom-card .card-body {
                 padding: 10px;
+                width: 100%;
             }
-            .custom-card .card-title a,
-            .custom-card .card-title {
+            .custom-card .card-title a {
                 color: #333;
                 text-decoration: none;
                 font-size: 1rem;
+                display: block;
             }
             .custom-card .card-title a:hover {
                 color: #555;
@@ -42,6 +45,7 @@ function people_display() {
                 font-size: 0.85rem;
                 color: #666;
                 margin-top: 5px;
+                display: block;
             }
         </style>';
 
@@ -59,13 +63,13 @@ function people_display() {
             echo '<div class="card-body">';
             echo '<h5 class="card-title"><a href="' . get_permalink($post) . '">' . get_the_title($post) . '</a></h5>';
             if (!empty($job_title)) {
-                echo '<div class="job-title">' . esc_html($job_title) . '</div>';  
+                echo '<div class="job-title">' . esc_html($job_title) . '</div>';
             }
             echo '</div>';
-            echo '</div>'; 
-            echo '</div>'; 
+            echo '</div>';
+            echo '</div>';
         }
-        echo '</div>'; 
+        echo '</div>';
         wp_reset_postdata();
     } else {
         echo 'No posts found.';
