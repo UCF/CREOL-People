@@ -44,8 +44,8 @@ function people_display() {
             .job-title {
                 font-size: 0.85rem;
                 color: #666;
-                margin-top: -5px;
-                margin-bottom: 5px;
+                margin-top: -1em;
+                margin-bottom: 0.5em;
                 display: block;
             }
         </style>';
