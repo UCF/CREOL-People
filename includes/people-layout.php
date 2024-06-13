@@ -36,11 +36,11 @@ function people_display() {
             .custom-card a {
                 color: #fff;
                 text-decoration: none;
-                font-size: 1rem;
+                font-size: 0.85rem;
                 display: block;
             }
             .custom-card a:hover {
-                color: #fff;
+                color: #f5f5f5;
             }
             .job-title {
                 font-size: 0.85rem;
