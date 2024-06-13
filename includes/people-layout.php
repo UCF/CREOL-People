@@ -29,7 +29,7 @@ function people_display() {
                 margin: 0 auto;
             }
             .custom-card .card-body {
-                padding: 10px;
+                padding-top: 5px;
                 width: 100%;
             }
             .custom-card .card-title a {
