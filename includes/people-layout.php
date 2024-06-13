@@ -27,6 +27,7 @@ function people_display() {
             echo '<style>
                 .section-title {
                     margin-top: 2em;
+                    margin-bottom: 2em !important;
                     padding-bottom: 5px;
                     border-bottom: 3px solid #ffcc00;
                 }
