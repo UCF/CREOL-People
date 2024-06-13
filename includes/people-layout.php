@@ -14,10 +14,6 @@ function people_display() {
         echo '<ul>';
         foreach ($posts as $post) {
             setup_postdata($post);
-			$featured_image = get_the_post_thumbnail($post->ID, 'thumbnail');
-			if (!empty($featured_image)) {
-                echo $featured_image; // Display the featured image
-            }
             echo '<li><a href="' . get_permalink($post) . '">' . get_the_title($post) . '</a></li>';
         }
         echo '</ul>';
