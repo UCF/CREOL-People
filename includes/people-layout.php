@@ -21,10 +21,24 @@ function people_display() {
 
         $posts = get_posts($args);
 
-        echo "<h2 class='section-title'>$title</h2>";
+        echo "<h2 class='section-title auto-section mb-0' data-section-link-title='$title'>$title</h2>";
 
         if (!empty($posts)) {
             echo '<style>
+                .section-title {
+                    margin-top: 2em;
+                    position: relative;
+                    padding-bottom: 10px;
+                }
+                .section-title::after {
+                    display: block;
+                    width: 100%;
+                    height: 3px;
+                    background-color: #ffcc00;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                }   
                 .custom-card {
                     border: none;
                     border-radius: 10px;
@@ -62,6 +76,8 @@ function people_display() {
                 .card-title {
                     font-size: 1rem;
                 }
+                
+                
             </style>';
 
             echo '<div class="row">';
