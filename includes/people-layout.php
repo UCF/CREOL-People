@@ -83,6 +83,7 @@ function people_display() {
                     echo '<div class="job-title">' . esc_html($job_title) . '</div>';
                 }
                 echo '</div>';
+                echo '</a>';
                 echo '</div>';
                 echo '</div>';
             }
