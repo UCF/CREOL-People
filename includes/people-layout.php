@@ -31,7 +31,7 @@ function people_display() {
                     border-bottom: 3px solid #ffcc00;
                 }
                 .card-box {
-                    margin-top: 5px;
+                    margin-top: 5px !important;
                 }
                 .custom-card {
                     border: none;
