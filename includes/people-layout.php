@@ -10,8 +10,6 @@ function people_display() {
 
     $posts = get_posts($args);
 
-    echo '<pre>'; var_dump($posts); echo '</pre>';
-
     if (!empty($posts)) {
         // Include custom styles
         echo '<style>
@@ -48,7 +46,7 @@ function people_display() {
         foreach ($posts as $post) {
             setup_postdata($post);
             $featured_image = get_the_post_thumbnail($post->ID, 'full');
-            $job_title = get_post_meta($post->ID, 'job_title', true);  
+            $job_title = get_field('person_jobtitle', $post->ID);
 
             echo '<div class="col-lg-2 col-md-3 col-sm-4 col-6">';
             echo '<div class="card custom-card">';
