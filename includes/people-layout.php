@@ -66,7 +66,7 @@ function people_display() {
         $posts = get_posts($args);
 
         $firstWord = explode(' ', $title)[0];
-        echo "<h2 class='section-title auto-section mb-1 mt-3 pb-2' data-section-link-title='$firstWord' id='$firstWord'>$title</h2>";
+        echo "<h2 class='section-title auto-section mb-3 mt-3 pb-2' data-section-link-title='$firstWord' id='$firstWord'>$title</h2>";
 
         if (!empty($posts)) {
             
