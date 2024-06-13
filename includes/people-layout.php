@@ -33,13 +33,13 @@ function people_display() {
                 padding-top: 10px;
                 width: 100%;
             }
-            .custom-card .card-title a {
+            .custom-card a {
                 color: #fff;
                 text-decoration: none;
                 font-size: 1rem;
                 display: block;
             }
-            .custom-card .card-title a:hover {
+            .custom-card a:hover {
                 color: #fff;
             }
             .job-title {
