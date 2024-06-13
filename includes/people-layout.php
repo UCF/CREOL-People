@@ -18,10 +18,10 @@ function people_display() {
                 border-radius: 10px;  
             }
             .custom-card img {
-                width: 100%; 
-                height: auto; 
-                border-top-left-radius: 10px;  
-                border-top-right-radius: 10px;
+                width: 300px; 
+                height: 200px;
+				object-fit: cover; 
+                border-radius: 10px;
             }
             .custom-card .card-body {
                 padding: 10px;  
