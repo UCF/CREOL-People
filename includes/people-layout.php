@@ -21,8 +21,9 @@ function people_display() {
 
         $posts = get_posts($args);
 
+        echo "<h2 class='section-title'>$title</h2>";
+
         if (!empty($posts)) {
-            echo "<h2>$title</h2>";
             echo '<style>
                 .custom-card {
                     border: none;
