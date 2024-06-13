@@ -57,7 +57,7 @@ function people_display() {
                 }
                 .job-title {
                     font-size: 0.85rem;
-                    color: #666;
+                    color: #f5f5f5;
                     margin-top: -1em;
                     margin-bottom: 0.5em;
                     display: block;
