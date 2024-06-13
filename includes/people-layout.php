@@ -8,6 +8,50 @@ function people_display() {
         'courtesy-faculty' => 'Courtesy Faculty'
     ];
 
+    echo '<style>
+        .section-title {
+            border-bottom: 3px solid #ffcc00;
+        }
+        .custom-card {
+            border: none;
+            border-radius: 10px;
+            text-align: center;
+            background: transparent;
+        }
+        .custom-card img {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+        }
+        .custom-card .card-body {
+            padding-top: 10px;
+            width: 100%;
+        }
+        .custom-card a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: block;
+        }
+        .custom-card a:hover {
+            color: #f5f5f5;
+        }
+        .job-title {
+            font-size: 0.85rem;
+            color: #f5f5f5;
+            margin-top: -1em;
+            margin-bottom: 0.5em;
+            display: block;
+        }
+        .card-title {
+            font-size: 1rem;
+        }
+        
+    </style>';
+
     foreach ($sections as $slug => $title) {
         $args = array(
             'posts_per_page' => -1,
@@ -25,51 +69,7 @@ function people_display() {
         echo "<h2 class='section-title auto-section mb-3 mt-3 pb-2' data-section-link-title='$firstWord' id='$firstWord'>$title</h2>";
 
         if (!empty($posts)) {
-            echo '<style>
-                .section-title {
-                    border-bottom: 3px solid #ffcc00;
-                }
-                .custom-card {
-                    border: none;
-                    border-radius: 10px;
-                    text-align: center;
-                    background: transparent;
-                }
-                .custom-card img {
-                    width: 200px;
-                    height: 250px;
-                    object-fit: cover;
-                    border-radius: 10px;
-                    display: block;
-                    margin: 0 auto;
-                }
-                .custom-card .card-body {
-                    padding-top: 10px;
-                    width: 100%;
-                }
-                .custom-card a {
-                    color: #fff;
-                    text-decoration: none;
-                    font-size: 0.85rem;
-                    display: block;
-                }
-                .custom-card a:hover {
-                    color: #f5f5f5;
-                }
-                .job-title {
-                    font-size: 0.85rem;
-                    color: #f5f5f5;
-                    margin-top: -1em;
-                    margin-bottom: 0.5em;
-                    display: block;
-                }
-                .card-title {
-                    font-size: 1rem;
-                }
-                
-                
-            </style>';
-
+            
             echo '<div class="row mb-3">';
             foreach ($posts as $post) {
                 setup_postdata($post);
