@@ -30,6 +30,9 @@ function people_display() {
                     padding-bottom: 5px;
                     border-bottom: 3px solid #ffcc00;
                 }
+                .card-box {
+                    margin-top: 5px;
+                }
                 .custom-card {
                     border: none;
                     border-radius: 10px;
@@ -78,7 +81,7 @@ function people_display() {
                 $featured_image = get_the_post_thumbnail($post->ID, 'full');
                 $job_title = get_field('person_jobtitle', $post->ID);
 
-                echo '<div class="col-lg-2 col-md-3 col-sm-4 col-6">';
+                echo '<div class="card-box col-lg-2 col-md-3 col-sm-4 col-6">';
                 echo '<div class="card custom-card">';
                 echo '<a href="' . $permalink . '">';
                 if (!empty($featured_image)) {
