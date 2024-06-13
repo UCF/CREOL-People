@@ -21,7 +21,8 @@ function people_display() {
 
         $posts = get_posts($args);
 
-        echo "<h2 class='section-title auto-section mb-2 pb-2' data-section-link-title='$title'>$title</h2>";
+        $firstWord = explode(' ', $title)[0];
+        echo "<h2 class='section-title auto-section mb-2 pb-2' data-section-link-title='$firstWord'>$title</h2>";
 
         if (!empty($posts)) {
             echo '<style>
