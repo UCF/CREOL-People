@@ -1,29 +1,23 @@
 <?php
 
 function people_display() {
-	$posts = get_posts(array(
-		'posts_per_page'    => -1,
-		'post_type'         => 'post'
-	));
+    $args = array(
+        'posts_per_page' => -1, 
+        'post_type' => 'post',   
+        'post_status' => 'publish'
+    );
 
-	if( $posts ): ?>
-		
-		<ul>
-			
-		<?php foreach( $posts as $post ): 
-			
-			setup_postdata( $post );
-			
-			?>
-			<li>
-				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-			</li>
-		
-		<?php endforeach; ?>
-		
-		</ul>
-		
-		<?php wp_reset_postdata(); ?>
+    $posts = get_posts($args);
 
-	<?php endif;
+    if (!empty($posts)) {
+        echo '<ul>';
+        foreach ($posts as $post) {
+            setup_postdata($post);
+            echo '<li><a href="' . get_permalink($post) . '">' . get_the_title($post) . '</a></li>';
+        }
+        echo '</ul>';
+        wp_reset_postdata(); 
+    } else {
+        echo 'No posts found.';
+    }
 }
