@@ -29,7 +29,7 @@ function people_display() {
                 margin: 0 auto;
             }
             .custom-card .card-body {
-                padding-top: 5px;
+                padding-top: 10px;
                 width: 100%;
             }
             .custom-card .card-title a {
@@ -37,6 +37,7 @@ function people_display() {
                 text-decoration: none;
                 font-size: 1rem;
                 display: block;
+                margin-bottom: 0;
             }
             .custom-card .card-title a:hover {
                 color: #555;
