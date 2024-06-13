@@ -49,6 +49,9 @@ function people_display() {
                 margin-bottom: 0.5em;
                 display: block;
             }
+            .card-title {
+                font-size: 1rem;
+            }
         </style>';
 
         echo '<div class="row">';
