@@ -5,7 +5,10 @@ function people_display() {
         'posts_per_page' => -1,
         'post_type'      => 'person',
         'post_status'    => 'publish',
-        'category_name'  => 'core-faculty'
+        'category_name'  => 'core-faculty',
+        'meta_key'       => 'person_orderby_name', 
+        'orderby'        => 'meta_value',
+        'order'          => 'ASC' 
     );
 
     $posts = get_posts($args);
