@@ -22,7 +22,7 @@ function people_display() {
         $posts = get_posts($args);
 
         $firstWord = explode(' ', $title)[0];
-        echo "<h2 class='section-title auto-section mb-2 pb-2' data-section-link-title='$firstWord' id='$firstWord'>$title</h2>";
+        echo "<h2 class='section-title auto-section mb-2 mt-2 pb-2' data-section-link-title='$firstWord' id='$firstWord'>$title</h2>";
 
         if (!empty($posts)) {
             echo '<style>
@@ -86,7 +86,7 @@ function people_display() {
                 echo '<div class="card-body">';
                 echo '<h5 class="card-title">' . get_the_title($post) . '</h5>';
                 if (!empty($job_title)) {
-                    echo '<div class="job-title">' . esc_html($job_title) . '</div>';
+                    echo '<div class="job-title"><i>' . esc_html($job_title) . '</i></div>';
                 }
                 echo '</div>';
                 echo '</a>';
