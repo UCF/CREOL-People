@@ -71,7 +71,7 @@ function people_display() {
             foreach ($posts as $post) {
                 setup_postdata($post);
                 $permalink = get_permalink($post);
-                $featured_image = get_the_post_thumbnail($post->ID, 'full');
+                $featured_image = get_the_post_thumbnail($post->ID, 'attachment-medium');
                 $job_title = get_field('person_jobtitle', $post->ID);
 
                 echo '<div class="card-box col-lg-2 col-md-3 col-sm-4 col-6">';
