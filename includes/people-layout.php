@@ -1,7 +1,12 @@
 <?php
 
+/*
+Shortcode Plugin widget: fetches faculty by group and displays people as cards on the faculty page 
+*/
+
+// Styling and displays the faculty cards
 function people_display() {
-    $sections = [
+    $sections = [ // Array
         'core-faculty' => 'Core Faculty',
         'joint-faculty' => 'Joint Faculty',
         'emeritus-faculty' => 'Emeritus Faculty',
@@ -49,7 +54,8 @@ function people_display() {
         
     </style>';
 
-    foreach ($sections as $slug => $title) {
+    // For each group of faculty fetch the posts and display cards 
+    foreach ($sections as $slug => $title) { // Accessing the category name 
         $args = array(
             'posts_per_page' => -1,
             'post_type'      => 'person',
