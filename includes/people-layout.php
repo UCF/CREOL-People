@@ -13,6 +13,9 @@ function people_display() {
         'courtesy-faculty' => 'Courtesy Faculty'
     ];
 
+    // Collect people explicitly excluded by the ACF "Exclude" field.
+    $excluded_people = [];
+
     echo '<style>
         .section-title {
             border-bottom: 3px solid #ffcc00;
@@ -76,6 +79,25 @@ function people_display() {
             echo '<div class="row mb-5">';
             foreach ($posts as $post) {
                 setup_postdata($post);
+                $exclude_field = get_field('exclude', $post->ID);
+
+                // Treat truthy/yes values (including checkbox arrays) as excluded.
+                $should_exclude = false;
+                if (is_array($exclude_field)) {
+                    $normalized_values = array_map('strtolower', array_map('strval', $exclude_field));
+                    $should_exclude = array_intersect($normalized_values, ['1', 'true', 'yes', 'on']) ? true : false;
+                } elseif (is_bool($exclude_field)) {
+                    $should_exclude = $exclude_field;
+                } elseif (is_string($exclude_field)) {
+                    $should_exclude = in_array(strtolower($exclude_field), ['1', 'true', 'yes', 'on'], true);
+                } elseif (is_numeric($exclude_field)) {
+                    $should_exclude = ((int) $exclude_field) === 1;
+                }
+
+                if ($should_exclude) {
+                    $excluded_people[] = $post->ID;
+                    continue;
+                }
                 $permalink = get_permalink($post);
                 $featured_image = get_the_post_thumbnail($post->ID, 'medium');
                 $job_title = get_field('person_jobtitle', $post->ID);
